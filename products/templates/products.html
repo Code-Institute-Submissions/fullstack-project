@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Product Catalogue</h1>
+<div class="row row-flex">
+
+{% for t in all_products %}
+<div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
+<div class="panel-body">
+<div class="product">
+<img src="{% get_media_prefix %}{{t.image}}/">
+</div>
+<p>Name: {{t.name}}</p>
+<p>Description: {{t.description}}</p>
+<p>Price: ${{t.price}}</p>
+</div>
+</div>
+{% endfor %}
+{% endblock %}
