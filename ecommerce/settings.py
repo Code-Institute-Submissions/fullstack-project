@@ -26,7 +26,7 @@ SECRET_KEY = '&y)+ghl6!*v#y0u@yo3%0q!(5_@3-(gl74xu%l0m-4nn40r@&v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME')]
+ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'),'django-project-helmy.herokuapp.com']
 
 
 # Application definition
