@@ -8,3 +8,10 @@ class TestViews(TestCase):
         page = self.client.get("/")
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "products.html")
+    
+    def test_get_add_product_page(self):
+        page = self.client.get("/products/add")
+        self.assertEqual(page.status_code, 200)
+        self.assertTemplateUsed(page, "add_product.html")
+    
+    
