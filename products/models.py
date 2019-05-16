@@ -1,11 +1,6 @@
 from django.db import models
 # Create your models here.
 
-class Brand(models.Model):
-    brand_name = models.CharField(blank=False,max_length=255)
-    def __str__(self):
-        return self.brand_name
-        
 class Category(models.Model):
     name = models.CharField(blank=False,max_length=255)
     def __str__(self):
@@ -14,9 +9,6 @@ class Category(models.Model):
 class Review(models.Model):
     review = models.TextField(blank=True,null=True)
     
-    def __str__(self):
-        return self.review
-
 class Product(models.Model):
     name = models.CharField(max_length=254, default='')
     description = models.TextField()
@@ -24,7 +16,20 @@ class Product(models.Model):
     image = models.ImageField(upload_to='images')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='posts', null=True)
     review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name='posts', null=True)
-    brand_name = models.OneToOneField(Brand,on_delete=models.CASCADE, related_name='posts', null=True)
+    
     def __str__(self):
         return self.name
+
+class Brand(models.Model):
+    brand_name = models.CharField(blank=False,max_length=255)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='posts', null=True)
+    def __str__(self):
+        return self.brand_name
+        
+
+    
+    def __str__(self):
+        return self.review
+
+
 
