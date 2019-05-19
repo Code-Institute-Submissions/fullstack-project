@@ -2,6 +2,14 @@
 {% load static %}
 {% block content %}
 <h1>Product Catalogue</h1>
+<br/><br/>
+    <div class="search">
+    <form method="GET">
+    <input type='text' placeholder="Search terms" name="search_terms">
+    <input type='submit', value='Search'>
+    </div>
+    </form>
+   <br/><br/>
 <br/>
 <button type="button"><a style="text-decoration:none" href={% url 'view_cart_link' %}>View Cart</a></button>
 <br/><br/>
