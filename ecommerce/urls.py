@@ -18,6 +18,7 @@ from django.contrib import admin
 from products.views import all_products
 from accounts import urls as urls_accounts
 from cart import urls as cart_urls
+from checkout import urls as checkout_url
 from django.conf import settings # new
 from django.conf.urls.static import static # new
 
@@ -25,7 +26,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', all_products, name='index'),
     url(r'^accounts/', include(urls_accounts)),
-    url(r'^shopping_cart/', include(cart_urls.urlpatterns))
+    url(r'^shopping_cart/', include(cart_urls.urlpatterns)),
+    url(r'^checkout/', include(checkout_url.urlpatterns))
 ]
 
 if settings.DEBUG: # new

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'products',
     'cart',
     'accounts',
+    'checkout',
     'crispy_forms'
 ]
 
@@ -146,3 +147,6 @@ if 'test' in sys.argv:
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'mydatabase'
     }
+
+STRIPE_PUBLISHABLE_KEY = 'pk_test_04Ov1gu9LylVzNPymV2z0jXJ00IM2NxYZQ'
+STRIPE_SECRET_KEY = 'sk_test_XpUiLcYHqwuDcln4ZkI4IRVE007qyYs7kl'
