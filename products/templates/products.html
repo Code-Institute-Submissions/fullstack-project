@@ -2,12 +2,25 @@
 {% load static %}
 {% block content %}
 <h1>Product Catalogue</h1>
-
+<br/>
+<button type="button"><a style="text-decoration:none" href="view_cart">View Cart</a></button>
+<br/><br/>
+<br/>
+<button type="button"><a style="text-decoration:none" href="clear_cart">Clear Cart</a></button>
+<br/><br/>
 <div class="row row-flex">
 {% for t in all_products %}
 <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
 <div class="panel-body">
 <div class="product">
+<div id="catalogue">
+        <br>
+        <form method='POST', action='{% url 'add_to_cart_link' id=t.id %}'>
+         {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit">
+        </form>
+</div>
 <img src="{% get_media_prefix %}{{t.image}}/">
 </div>
 <p>Name: {{t.name}}</p>
@@ -15,6 +28,7 @@
 <p>Price: ${{t.price}}</p>
 <p>Category: {{t.category}}</p>
 <p>Top Review of the Day: {{t.review}}</p>
+
 </div>
 </div>
 {% endfor %}

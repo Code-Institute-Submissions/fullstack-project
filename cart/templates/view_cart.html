@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% for key,value in cart.items %}
+    <br><br>
+    <li>{{value.product.name}}</li>
+    <li>Price: ${{value.product.price}}</li>
+    <li>Quantity: {{value.qty}}</li>
+    <a href={% url 'remove_from_cart_link' id=value.product.id %}>Remove from Cart</a>
+    {% endfor %}
+{% endblock %}
