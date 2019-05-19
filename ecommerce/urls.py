@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from products.views import all_products, addproduct
+from products.views import all_products
 from accounts import urls as urls_accounts
 from django.conf import settings # new
 from django.conf.urls.static import static # new
@@ -23,7 +23,6 @@ from django.conf.urls.static import static # new
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', all_products),
-    url(r'^products/add$', addproduct),
     url(r'^accounts/', include(urls_accounts)),
     
 ]
