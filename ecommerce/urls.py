@@ -17,7 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from products.views import all_products
 from accounts import urls as urls_accounts
-from cart.views import add_to_cart, view_cart,remove_from_cart,remove_all_from_cart
+from cart import urls as cart_urls
 from django.conf import settings # new
 from django.conf.urls.static import static # new
 
@@ -25,10 +25,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', all_products, name='index'),
     url(r'^accounts/', include(urls_accounts)),
-    url(r'^view_cart/$', view_cart),
-    url(r'^add_to_cart/(?P<id>\d+)$', add_to_cart, name='add_to_cart_link'),
-    url(r'^clear_cart/$', remove_all_from_cart, name='remove_all_from_cart_link'),
-    url(r'^remove_from_cart/(?P<id>\d+)$', remove_from_cart, name='remove_from_cart_link')
+    url(r'^shopping_cart/', include(cart_urls.urlpatterns))
 ]
 
 if settings.DEBUG: # new

@@ -3,10 +3,10 @@
 {% block content %}
 <h1>Product Catalogue</h1>
 <br/>
-<button type="button"><a style="text-decoration:none" href="view_cart">View Cart</a></button>
+<button type="button"><a style="text-decoration:none" href={% url 'view_cart_link' %}>View Cart</a></button>
 <br/><br/>
 <br/>
-<button type="button"><a style="text-decoration:none" href="clear_cart">Clear Cart</a></button>
+<button type="button"><a style="text-decoration:none" href={% url 'remove_all_from_cart_link' %}>Clear Cart</a></button>
 <br/><br/>
 <div class="row row-flex">
 {% for t in all_products %}
