@@ -1,8 +1,18 @@
 from django.test import TestCase, Client
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
+from .views import index, login, logout, register
+from accounts.forms import UserLoginForm, UserRegistrationForm
+from django.core.urlresolvers import reverse
 
-class TestAccountViews(TestCase):
+class TestViews(TestCase):
+    def test_get_profile_page(self):
+        user = User.objects.create_user(username='username', password='password')
+        self.client.login(username='username', password='password')
+        page = self.client.get("/accounts/profile/")
+        self.assertEqual(page.status_code, 200)
+        self.assertTemplateUsed(page, "profile.html")
+        
     def test_get_register_page(self):
         response = self.client.get('/accounts/register')
         self.assertEqual(response.status_code, 301)
@@ -47,5 +57,17 @@ class TestAccountViews(TestCase):
         response2 = self.client.post('/accounts/login/', {'username': self.user.username,
                                                           'password': 'Helloworld'})
         self.assertEqual(response2.status_code, 200)
+    
+    def test_logout_successfully(self):
+        user = UserRegistrationForm({"username":"Ben", "email":"ben@ben.com", "password1":"cornbob", "password2":"cornbob"})
+        user.save()
+        
+        login_successful = self.client.login(username="Ben", password="cornbob")
+        self.assertTrue(login_successful)
+        
+        page = self.client.get("/accounts/logout/", follow=True)
+        self.assertEqual(page.status_code, 200)
+        self.assertRedirects(page, '/')
+    
     
     
