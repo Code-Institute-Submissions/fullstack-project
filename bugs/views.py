@@ -34,3 +34,17 @@ def add_bug(request):
         return render(request,"add_bug.html",{
             'form' : toadd_form
         })
+
+@login_required()
+def edit_bug(request, id):
+    edit_item = get_object_or_404(Bug, pk=id)
+    if request.method == "POST":
+        submitted_form = BugForm(request.POST, instance=edit_item)
+        if submitted_form.is_valid():
+            submitted_form.save()
+            return redirect(all_bugs)
+    else:
+        form = BugForm(instance=edit_item)
+        return render(request, 'edit_bug.html',{
+            'item_form':form
+        })
