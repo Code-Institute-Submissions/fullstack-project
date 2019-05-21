@@ -20,6 +20,7 @@ from products.views import all_products
 from accounts import urls as urls_accounts
 from cart import urls as cart_urls
 from checkout import urls as checkout_url
+from bugs import urls as urls_bugs
 from django.conf import settings # new
 from django.conf.urls.static import static # new
 
@@ -29,7 +30,8 @@ urlpatterns = [
     url(r'^products/', all_products, name='all_products_link'),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^shopping_cart/', include(cart_urls.urlpatterns)),
-    url(r'^checkout/', include(checkout_url.urlpatterns))
+    url(r'^checkout/', include(checkout_url.urlpatterns)),
+    url(r'^bugs/', include(urls_bugs))
 ]
 
 if settings.DEBUG: # new
