@@ -48,3 +48,14 @@ def edit_bug(request, id):
         return render(request, 'edit_bug.html',{
             'item_form':form
         })
+
+@login_required()
+def delete_bug(request, id):
+    delete_item = get_object_or_404(Bug, pk=id)
+    if request.method == "POST":
+        delete_item.delete()
+        return redirect(all_bugs)
+    else:
+        return render(request, 'confirm-delete.html',{
+            't':delete_item
+        })
