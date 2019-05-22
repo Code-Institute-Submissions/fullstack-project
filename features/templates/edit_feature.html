@@ -1,0 +1,8 @@
+{% extends "base.html" %} {% load bootstrap_tags %} {% block content %}
+<h3>Edit your feature here</h3>
+<form method="POST">
+{% csrf_token %}
+{{ item_form| as_bootstrap }}
+<button type="submit" class="btn btn-success">Submit</button>
+</form>
+{%endblock%}

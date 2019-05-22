@@ -36,3 +36,28 @@ def add_feature(request):
             'form' : toadd_form
         })
 
+@login_required()
+def edit_feature(request, id):
+    edit_item = get_object_or_404(Feature, pk=id)
+    if request.method == "POST":
+        submitted_form = FeatureForm(request.POST, instance=edit_item)
+        if submitted_form.is_valid():
+            submitted_form.save()
+            return redirect(all_features)
+    else:
+        form = FeatureForm(instance=edit_item)
+        return render(request, 'edit_feature.html',{
+            'item_form':form
+        })
+
+@login_required()
+def delete_feature(request, id):
+    delete_item = get_object_or_404(Feature, pk=id)
+    if request.method == "POST":
+        delete_item.delete()
+        return redirect(all_features)
+    else:
+        return render(request, 'confirm-delete.html',{
+            't':delete_item
+        })
+
