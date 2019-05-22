@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from home.views import index
+from home import urls as urls_home
 from products.views import all_products
 from accounts import urls as urls_accounts
 from cart import urls as cart_urls
@@ -27,6 +28,7 @@ from django.conf.urls.static import static # new
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name='index'),
+    url(r'^home/', include(urls_home)),
     url(r'^products/', all_products, name='all_products_link'),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^shopping_cart/', include(cart_urls.urlpatterns)),

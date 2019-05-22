@@ -53,7 +53,7 @@ class TestViews(TestCase):
                                              email='testuser999@test.com',
                                              password='Helloworld')
         self.user.save()
-        response = self.client.get('/')
+        response = self.client.get('/home/')
         response2 = self.client.post('/accounts/login/', {'username': self.user.username,
                                                           'password': 'Helloworld'})
         self.assertEqual(response2.status_code, 200)
@@ -67,7 +67,7 @@ class TestViews(TestCase):
         
         page = self.client.get("/accounts/logout/", follow=True)
         self.assertEqual(page.status_code, 200)
-        self.assertRedirects(page, '/')
+        self.assertRedirects(page, '/home/')
     
     
     
