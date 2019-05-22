@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
     {%block js_includes %}
     {%endblock %}
 </head>
@@ -36,6 +37,7 @@
                         <li><a href="{% url 'logout' %}">Log Out</a></li>
                         <li><a href="checkout">Checkout</a></li>
                     {%  else %}
+                        <li><a href="{% url 'graphs' %}">Community</a></li>
                         <li><a href="{% url 'all_products_link' %}">Products</a></li>
                         <li><a href="{% url 'register' %}">Register</a></li>
                         <li><a href="{% url 'login' %}">Log In</a></li>

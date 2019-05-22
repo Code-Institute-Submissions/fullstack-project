@@ -23,6 +23,7 @@ from cart import urls as cart_urls
 from checkout import urls as checkout_url
 from bugs import urls as urls_bugs
 from features import urls as urls_features
+from graphs import urls as urls_graphs
 from django.conf import settings # new
 from django.conf.urls.static import static # new
 
@@ -35,7 +36,8 @@ urlpatterns = [
     url(r'^shopping_cart/', include(cart_urls.urlpatterns)),
     url(r'^checkout/', include(checkout_url.urlpatterns)),
     url(r'^bugs/', include(urls_bugs)),
-    url(r'^features/', include(urls_features))
+    url(r'^features/', include(urls_features)),
+    url(r'^graphs/', include(urls_graphs)),
 ]
 
 if settings.DEBUG: # new

@@ -33,3 +33,21 @@ footer {
 .product-description {
     min-height: 40px;
 }
+
+ /*--------------------------------------------- GRAPHS*/
+    
+    .features-explanation-list{
+        text-align: left;
+        font-size: 20px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+    
+    .list-feature-item{
+        padding: 10px;
+        color: #0b3c72;
+    }
+    
+    .progressbar-feature{
+        margin-top: 30px;
+    }
