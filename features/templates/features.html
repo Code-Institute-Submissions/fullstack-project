@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block content %}
+<br/><br/>
+<ul>
+<div class = "featuresection">
+<h1>Features</h1>
+<br/>
+{% for c in all_features %}
+<div id = "featurestracker">
+    <p><b>Name:</b> {{c.name}}</p>
+    <p><b>Description:</b> {{c.description}}</p>
+    <p><b>Author:</b> {{c.author}}</p>
+    {% if c.status == "todo" %}
+    <!--<p><b>Status:</b> {{t.status}}</p>-->
+    <b>Status: </b><span class="label label-danger">{{c.status}}</span>
+    {% elif c.status == "doing" %}
+    <b>Status: </b><span class="label label-warning">{{c.status}}</span>
+    {% else %}
+    <b>Status: </b><span class="label label-success">{{c.status}}</span>
+    {% endif %}
+    <!--<p><b>Views:</b> {{t.views}}</p>-->
+    <p><b>Upvotes:</b> {{c.upvotes}}</p>
+    <br>
+</div>
+{% endfor %}
+</ul>
+</div>
+{%endblock%}

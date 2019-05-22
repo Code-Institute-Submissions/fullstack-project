@@ -34,9 +34,12 @@ urlpatterns = [
     url(r'^accounts/', include(urls_accounts)),
     url(r'^shopping_cart/', include(cart_urls.urlpatterns)),
     url(r'^checkout/', include(checkout_url.urlpatterns)),
-    url(r'^bugs/', include(urls_bugs)),
-    url(r'^features/', include(urls_features))
+    url(r'^bugs/', include(urls_bugs))
 ]
 
 if settings.DEBUG: # new
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+
+
