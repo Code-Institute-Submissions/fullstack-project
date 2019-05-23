@@ -110,7 +110,7 @@ It can show which parts of your code are being exercised by tests, and which are
 3. After that, run the following command: **coverage report**
 4. A report of your coverage will be shown in the terminal window
 5. If you wish to view your coverage in html, run the following command: **coverage html** which will generate htmlconv
-6. To view htmlconv, go to htmlconv folder and open the index.html file to view your coverage report.
+6. To view htmlcov, go to htmlcov folder and open the index.html file to view your coverage report.
 
 ### Different Type of Devices & Different Browsers
 
