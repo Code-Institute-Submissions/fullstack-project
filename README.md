@@ -18,18 +18,29 @@ User Stories
 - As a user, I want to be able to view the bugs and features so that I can edit, delete and add new feature/bug in the future.
 - As a user, I want to be able to checkout the product after adding to cart so that the product will be bought.
 - As the owner of this website, I want to be enable the user to checkout the products that user submitted so that payment will be received.
-- 
+
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
- 
-### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
+The project contain these features below:
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+**Bugs & Features:**
+- Users can login to add new bug or feature so that the projects will be managed properly and ensuring the quality also.
+- Users can choose to edit, delete or upvote the selected bug or feature.
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+**Products:**
+- Users can view from a range of products available in the products page.
+- Users can choose to add to cart whatever product they want to purchase and the quantity of the product.
+- Users are able to search products that they want to see.
+- Users are able to view cart after adding the product to cart.
+- Users are able to remove selected product from the view cart page.
+- Users are able to remove all products from cart.
+
+**Checkout:**
+- Users are required to have an account and log in in order to checkout the product.
+- Users can checkout the product that they want to purchase by filling the form on the checkout page.
+
+**Community:**
+- Users are able to view graphs showing bugs and features as well as the highest-voted bugs and features.
 
 ### Features Left to Implement
 - Another feature idea
