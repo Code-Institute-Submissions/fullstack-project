@@ -152,4 +152,5 @@ if 'test' in sys.argv:
     }
 
 STRIPE_PUBLISHABLE_KEY = 'pk_test_04Ov1gu9LylVzNPymV2z0jXJ00IM2NxYZQ'
-STRIPE_SECRET_KEY = 'sk_test_XpUiLcYHqwuDcln4ZkI4IRVE007qyYs7kl'
+STRIPE_SECRET_KEY = 'pk_test_04Ov1gu9LylVzNPymV2z0jXJ00IM2NxYZQ'
+

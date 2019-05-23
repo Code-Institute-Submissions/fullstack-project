@@ -1,6 +1,8 @@
-# Your Project's Name
+# Django Milestone Project
 
-One or two paragraphs providing an overview of your project.
+The purpose of this project is to create a website for a startup called Unicorn Attractor. 
+This website allows users to register bugs and features. Bugs and features can also be upvoted. 
+The community page shows graphs of bugs and features, as well as the highest-voted bugs and features.
 
 Essentially, this part is your sales pitch.
  
