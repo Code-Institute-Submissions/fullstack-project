@@ -4,7 +4,6 @@ The purpose of this project is to create a website for a startup called Unicorn 
 This website allows users to register bugs and features. Bugs and features can also be upvoted. 
 The community page shows graphs of bugs and features, as well as the highest-voted bugs and features.
 
-Essentially, this part is your sales pitch.
  
 ## UX
  
@@ -47,10 +46,30 @@ The project contain these features below:
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
-
+List of tools and technologies used in this project are as follows:
+- [Bootstrap](https://getbootstrap.com/docs/3.3/)
+    - The project also uses some **Bootstrap** elements further simplify and maintain consistency throughout the project.
+    
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
+
+- [Python](https://www.python.org/)
+    - The **Python** programming language was used to code the backend of the Issue Management project.
+
+- [Django](https://www.djangoproject.com/)
+    - The project uses **Django** which is a Python Web Framework used as the backend of the project and fulfilling functions such as; connecting to the SQL database, controlling routing and navigation across pages etc.
+
+- [Stripe API](https://stripe.com/docs/api)
+    - The project uses **Stripe** to take payments during the checkout feature.
+
+- [Heroku](https://www.heroku.com/)
+    - The project uses **Heroku** as the Hosting platform for this project; this was because GitHubPages only provides hosting for static projects, and not dynamic projects like this Issue Manager project.
+
+- [Balsamiq](https://balsamiq.com/)
+    - This tool was used to create the mockups of the website at the beginning of the project. 
+
+- [ChartJS](https://www.chartjs.org/)
+    - This javascript framework was used to display graphs for the project by including the cdn into the base.html
 
 
 ## Testing
