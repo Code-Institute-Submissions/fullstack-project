@@ -8,13 +8,17 @@ Essentially, this part is your sales pitch.
  
 ## UX
  
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+Initial mockups were made using Balsamiq software to assist in creating the wireframe of website; a basic mockup was made of each area of the project.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
+- The wireframes can be located in the staticfiles folder.
 
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
-
+User Stories
+- As a user, I want to be able to see some graphs on bugs and features so that I can be well-aware of the issues
+- As a user, I want to be able to see products on the website so that I can decide whether to purchase them or not.
+- As a user, I want to be able to view the bugs and features so that I can edit, delete and add new feature/bug in the future.
+- As a user, I want to be able to checkout the product after adding to cart so that the product will be bought.
+- As the owner of this website, I want to be enable the user to checkout the products that user submitted so that payment will be received.
+- 
 ## Features
 
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
