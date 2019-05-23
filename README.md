@@ -142,4 +142,3 @@ I have also included a django heroku deployment cheatsheet in the staticfiles fo
 
 - I received inspiration for this project from this [github repository](https://github.com/Code-Institute-Submissions/full-stack-milestone).
 
-[![Build Status](https://travis-ci.org/chanhelmy/fullstack-project.svg?branch=master)](https://travis-ci.org/chanhelmy/fullstack-project)
