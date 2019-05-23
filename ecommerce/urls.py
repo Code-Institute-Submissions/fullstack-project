@@ -34,7 +34,7 @@ urlpatterns = [
     url(r'^products/', all_products, name='all_products_link'),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^shopping_cart/', include(cart_urls.urlpatterns)),
-    url(r'^checkout/', include(checkout_url.urlpatterns)),
+    url(r'^checkout/', include(checkout_url.urlpatterns),name='checkout_link'),
     url(r'^bugs/', include(urls_bugs)),
     url(r'^features/', include(urls_features)),
     url(r'^graphs/', include(urls_graphs)),

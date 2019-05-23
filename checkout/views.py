@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from .forms import OrderForm, PaymentForm
@@ -6,6 +6,7 @@ from django.utils import timezone
 from products.models import Product
 from .models import Order, OrderLineItem
 from django.core.mail import send_mail
+from django.contrib import messages
 import stripe
 # Create your views here.
 @login_required()
@@ -26,9 +27,9 @@ def checkout(request):
         cart = request.session.get('cart', {})
         total_cost = 0
         for cart_item in cart.values():
-            total_cost = cart_item['qty'] * cart_item['product']['price']
-            total_cost = float(total_cost)
-           
+            total_cost += int(cart_item['qty']) * float(cart_item['product']['price'])
+            floated_total_cost = float(total_cost)
+        # print(floated_total_cost) 
         order_form = OrderForm(request.POST)
         payment_form = PaymentForm(request.POST) 
         
@@ -51,7 +52,7 @@ def checkout(request):
             
             try:
                 customer = stripe.Charge.create(
-                    amount = int(total_cost * 100),
+                    amount = int(floated_total_cost * 100),
                     currency = "sgd",
                     description = "Order ID #" + str(order.id),
                     source= order.stripe_token
@@ -68,10 +69,13 @@ def checkout(request):
              
                 # send_to = ['chanhelmy@gmail.com']
                 # send_mail(subject, message, email_from, send_to)
-                return  HttpResponse("Payment successful")
-                
+                # return  HttpResponse("Payment successful")
+                messages.error(request, "You have successfully paid")
+                request.session['cart'] = {}
+                return redirect(reverse('all_products_link'))
             else:
-                return HttpResponse("Payment failed")
+                messages.error(request, "Unable to take payment")
+                # return HttpResponse("Payment failed")
             
         else:
             print(order_form.is_valid())
