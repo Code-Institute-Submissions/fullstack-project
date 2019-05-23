@@ -74,23 +74,56 @@ List of tools and technologies used in this project are as follows:
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+### Python Tests
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+Python tests was written for the Django Project, on a app by app basis and each app was further broken down into 3 main areas of testing; *Models*, *Views* & if applicable, *Forms*.
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+#### Testing Models
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+Models are used in Django to model each Database object.
+Models are also used to give a description of how each item looks like and their relationship with other models in the database (if applicable).
+Model testing can be found in *test_models.py* file for each app.
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+#### Testing Views
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+Views are used to handle what users see on a page. 
+They can also handle POST requests by submitting a form.
+Views testing can be found in *test_views.py* file for each app.
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+#### Testing Forms
+
+Forms are used to help create and update database objects.
+Forms are usually submitted through a web page via a view.
+Form testing can be found in *test_forms.py* file for each app.
+
+### Coverage
+
+Coverage.py is a tool for measuring code coverage of Python programs. 
+It monitors your program, noting which parts of the code have been executed, then analyzes the source to identify code that could have been executed but was not.
+Coverage measurement is typically used to gauge the effectiveness of tests. 
+It can show which parts of your code are being exercised by tests, and which are not.
+
+#### Steps Used To Generate A Coverage Report
+
+1. Install Coverage by running the following command in a terminal window: **pip3 install coverage**
+2. Then, CD into your django project directory and run the following command: **coverage run --source=app_name manage.py test** -> replace the app_name with the app you want to test.
+3. After that, run the following command: **coverage report**
+4. A report of your coverage will be shown in the terminal window
+5. If you wish to view your coverage in html, run the following command: **coverage html** which will generate htmlconv
+6. To view htmlconv, go to htmlconv folder and open the index.html file to view your coverage report.
+
+### Different Type of Devices & Different Browsers
+
+#### Devices
+
+Using the debugger tools on Google Chrome via the command (ctrl+shift+i), I was able to view the website in different devices such as mobile devices, tablets, laptops and desktops.
+
+#### Multi Browser Testing
+
+Multi browser testing was carried out so that the website looks consistent in different browsers.
+The following browser were tested in no particular order:
+- Google Chrome
+- Mozilla Firefox
 
 ## Deployment
 
