@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<h1>Product Catalogue</h1>
+<h1>Product Catalogue</h1> 
+{% if user.is_authenticated %}
+<h3>Welcome!</h3>
+{% else %}
 <h3>Please Have an Account & Login to checkout your cart!</h3>
+{% endif %}
 <br/><br/>
     <div class="search">
     <form method="GET">
