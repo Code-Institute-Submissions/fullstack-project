@@ -127,24 +127,17 @@ The following browser were tested in no particular order:
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
-
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
-
-In addition, if it is not obvious, you should also describe how to run your code locally.
-
+This website was deployed to heroku. A git repository was also created for this project to keep track of git commits. 
+I have also included a django heroku deployment cheatsheet in the staticfiles for future reference of deployment.
 
 ## Credits
 
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
 ### Media
-- The photos used in this site were obtained from ...
+
+- The photos used in this site were obtained from googling search images of products like shirt, belt and shoe.
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- I received inspiration for this project from this [github repository](https://github.com/Code-Institute-Submissions/full-stack-milestone).
