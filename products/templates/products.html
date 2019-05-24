@@ -10,15 +10,18 @@
 <br/><br/>
     <div class="search">
     <form method="GET">
+    <i class="fas fa-search"></i><br/>
     <input type='text' placeholder="Search terms" name="search_terms">
     <input type='submit', value='Search'>
     </div>
     </form>
    <br/><br/>
 <br/>
+<i class="fas fa-shopping-basket"></i><br/>
 <button type="button"><a style="text-decoration:none" href={% url 'view_cart_link' %}>View Cart</a></button>
 <br/><br/>
 <br/>
+<i class="fas fa-trash-alt"></i><br/>
 <button type="button"><a style="text-decoration:none" href={% url 'remove_all_from_cart_link' %}>Clear Cart</a></button>
 <br/><br/>
 <div class="row row-flex">
@@ -31,7 +34,7 @@
         <form method='POST', action='{% url 'add_to_cart_link' id=t.id %}'>
          {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit">
+        <i class="fas fa-cart-plus"></i><br><input type="submit" value="Add to cart">
         </form>
 </div>
 <img src="{% get_media_prefix %}{{t.image}}/">
