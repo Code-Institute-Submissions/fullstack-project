@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 import dj_database_url
 import sys
-
+import env
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'accounts',
     'checkout',
     'crispy_forms',
-    'graphs'
+    'graphs',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -134,13 +135,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
@@ -154,3 +148,27 @@ if 'test' in sys.argv:
 STRIPE_PUBLISHABLE_KEY = 'pk_test_04Ov1gu9LylVzNPymV2z0jXJ00IM2NxYZQ'
 STRIPE_SECRET_KEY = 'pk_test_04Ov1gu9LylVzNPymV2z0jXJ00IM2NxYZQ'
 
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIAFILES_LOCATION = 'media'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
+AWS_S3_OBJECT_PARAMETERS = {
+   'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+   'CacheControl': 'max-age=9460800'
+}
+
+AWS_STORAGE_BUCKET_NAME='django-ecommerce-helmy'
+AWS_S3_REGION_NAME='ap-southeast-1'
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_SECRET_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+STATICFILES_LOCATION = 'static'
