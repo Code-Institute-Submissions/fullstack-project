@@ -29,7 +29,7 @@ def checkout(request):
         for cart_item in cart.values():
             total_cost += int(cart_item['qty']) * float(cart_item['product']['price'])
             floated_total_cost = float(total_cost)
-        # print(floated_total_cost) 
+        print(floated_total_cost) 
         order_form = OrderForm(request.POST)
         payment_form = PaymentForm(request.POST) 
         
