@@ -1,6 +1,6 @@
-env.py
 *.sqlite3
+env.py
 static/
 __pycache__
-.~c9*
 media/
+.~c9*
