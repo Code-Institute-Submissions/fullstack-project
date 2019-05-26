@@ -19,10 +19,12 @@ def checkout(request):
             'cart': cart,
             'order_form':order_form,
             'payment_form':payment_form,
-            'stripe_publishable_key':settings.STRIPE_PUBLISHABLE_KEY
+            # 'stripe_publishable_key':settings.STRIPE_PUBLISHABLE_KEY
+            'stripe_publishable_key':settings.STRIPE_PUBLISHABLE
     })
     else:
-        stripe.api_key = settings.STRIPE_SECRET_KEY
+        # stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.api_key = settings.STRIPE_SECRET
         # to process the post via POST
         cart = request.session.get('cart', {})
         total_cost = 0

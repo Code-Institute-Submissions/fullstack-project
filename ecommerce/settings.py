@@ -24,7 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '&y)+ghl6!*v#y0u@yo3%0q!(5_@3-(gl74xu%l0m-4nn40r@&v'
+# SECRET_KEY = '&y)+ghl6!*v#y0u@yo3%0q!(5_@3-(gl74xu%l0m-4nn40r@&v'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -95,8 +96,8 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 #     }
 # }
 
-DATABASES = {'default': dj_database_url.parse('postgres://eqlqgmxfjwkmfx:39b485417ce6ba0f4da82fe68ed14891b2b5fb82f6b0bdbbc1f96569a0960652@ec2-50-17-231-192.compute-1.amazonaws.com:5432/dahrd5kj4thre')}
-
+# DATABASES = {'default': dj_database_url.parse('postgres://eqlqgmxfjwkmfx:39b485417ce6ba0f4da82fe68ed14891b2b5fb82f6b0bdbbc1f96569a0960652@ec2-50-17-231-192.compute-1.amazonaws.com:5432/dahrd5kj4thre')}
+DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
@@ -147,8 +148,10 @@ if 'test' in sys.argv:
         'NAME': 'mydatabase'
     }
 
-STRIPE_PUBLISHABLE_KEY = 'pk_test_04Ov1gu9LylVzNPymV2z0jXJ00IM2NxYZQ'
-STRIPE_SECRET_KEY = 'sk_test_XpUiLcYHqwuDcln4ZkI4IRVE007qyYs7kl'
+# STRIPE_PUBLISHABLE_KEY = 'pk_test_04Ov1gu9LylVzNPymV2z0jXJ00IM2NxYZQ'
+# STRIPE_SECRET_KEY = 'sk_test_XpUiLcYHqwuDcln4ZkI4IRVE007qyYs7kl'
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
