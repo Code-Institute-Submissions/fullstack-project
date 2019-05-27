@@ -133,7 +133,7 @@ I have also included a django heroku deployment cheatsheet in the staticfiles fo
 ## Credits
 
 ### Content
-
+- The homepage content were obtained from [this website](https://uilicious.com/).
 ### Media
 
 - The photos used in this site were obtained from googling search images of products like shirt, belt and shoe.
