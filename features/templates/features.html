@@ -6,9 +6,11 @@
 <ul>
 <div class = "featuresection">
 <h1>Features</h1>
+<hr>
 <br/>
 <button type="button"><a style="text-decoration:none" href="add">Add Feature</a></button>
 <br/><br/>
+<hr>
 {% for c in all_features %}
 <div id = "featurestracker">
     <p><b>Name:</b> {{c.name}}</p>
@@ -28,7 +30,7 @@
     <button type="button"><a style="text-decoration:none" href="edit/{{c.id}}">Edit Feature</a></button>
     <button type="button"><a style="text-decoration:none" href="delete/{{c.id}}">Delete</a></button>
     <br>
-    ------------------------------------------------------------------------------------------------
+    <hr>
 </div>
 {% endfor %}
 </ul>

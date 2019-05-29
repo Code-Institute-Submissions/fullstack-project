@@ -6,9 +6,11 @@
 <ul>
 <div class = "bugsection">
 <h1>Bugs</h1>
+<hr>
 <br/>
 <button type="button"><a style="text-decoration:none" href="add">Add Bug</a></button>
 <br/><br/>
+<hr>
 {% for t in all_bugs %}
 <div id="bugtracker">
     <p><b>Name:</b> {{t.name}}</p>
@@ -27,6 +29,7 @@
     <button type="button"><a style="text-decoration:none" href="edit/{{t.id}}">Edit Bug</a></button>
     <button type="button"><a style="text-decoration:none" href="delete/{{t.id}}">Delete</a></button>
     <br><br>
+    <hr>
     <!--<p><b>Views:</b> {{t.views}}</p>-->
     
 </div>
