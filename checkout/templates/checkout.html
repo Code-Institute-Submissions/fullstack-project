@@ -51,8 +51,9 @@ $(function(){
 </p>
 <ul>
     {% for key,value in cart.items %}
-    <li>{{value.product.name}}
-    <br>Quantity:{{value.qty}}
+    <li>{{value.product.name}}</li>
+    <li>Quantity:{{value.qty}}</li>
+    <hr>
     {% endfor %}
 </ul>
 <form method="POST" id='payment-form'>
